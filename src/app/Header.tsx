@@ -1,6 +1,5 @@
 "use client";
 import Button from "@/Components/Ui/Button";
-import WidthContainer from "@/Components/WidthContainer";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
@@ -61,10 +60,9 @@ function HeaderComponent() {
     <div
       className={clsx(
         "sticky left-0 top-0 z-30 bg-white bg-opacity-15 py-1 backdrop-blur-lg transition-all duration-200 ease-in-out",
-        +scrollY > 0 && "shadow",
-      )}
-    >
-      <WidthContainer className="">
+        +scrollY > 0 && "shadow"
+      )}>
+      <div className="container">
         <div className="relative flex h-fit items-center justify-between gap-2">
           <p className="text-2xl font-semibold">Mlab</p>
           <ul className="hidden gap-4 first:text-primary md:flex">
@@ -74,9 +72,8 @@ function HeaderComponent() {
                   href={nav.url}
                   className={clsx(
                     "font-medium transition duration-200 hover:text-primary",
-                    nav.name === "Home" && "text-primary",
-                  )}
-                >
+                    nav.name === "Home" && "text-primary"
+                  )}>
                   {nav.name}
                 </a>
               </li>
@@ -86,8 +83,7 @@ function HeaderComponent() {
           <Button
             variant="ghost"
             onClick={() => setNavActive((prev) => !prev)}
-            className="md:hidden"
-          >
+            className="md:hidden">
             <FaBars />
           </Button>
           <nav
@@ -95,21 +91,18 @@ function HeaderComponent() {
               "nav_bar fixed top-0 z-30 h-screen bg-black bg-opacity-55 transition-colors duration-300",
               navActive
                 ? "left-0 w-screen "
-                : "-left-[120vw] bg-transparent bg-opacity-0",
-            )}
-          >
+                : "-left-[120vw] bg-transparent bg-opacity-0"
+            )}>
             <div
               className={clsx(
                 "absolute flex h-full w-[80%] flex-col overflow-hidden bg-white py-1 transition-all duration-300",
-                navActive ? "left-0 delay-75" : "-left-[100vw]",
-              )}
-            >
+                navActive ? "left-0 delay-75" : "-left-[100vw]"
+              )}>
               <div className="flex items-center justify-between border-b border-black border-opacity-45 px-3 pb-1">
                 <p className="text-xl font-semibold">Navigation</p>
                 <Button
                   variant="ghost"
-                  onClick={() => setNavActive((prev) => !prev)}
-                >
+                  onClick={() => setNavActive((prev) => !prev)}>
                   <FaXmark />
                 </Button>
               </div>
@@ -119,16 +112,15 @@ function HeaderComponent() {
                   href={nav.url}
                   className={clsx(
                     "w-full px-3 py-1 transition duration-200 hover:bg-white_lite hover:text-primary md:hover:bg-transparent",
-                    currentLoc === nav.url && "text-primary",
-                  )}
-                >
+                    currentLoc === nav.url && "text-primary"
+                  )}>
                   {nav.name}
                 </a>
               ))}
             </div>
           </nav>
         </div>
-      </WidthContainer>
+      </div>
     </div>
   );
 }

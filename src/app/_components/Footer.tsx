@@ -1,4 +1,3 @@
-import WidthContainer from "@/Components/WidthContainer";
 import { blackFbIcon, blackInsIcon, blackTwIcon } from "@/lib/constance";
 import Image from "next/image";
 import Link from "next/link";
@@ -45,7 +44,7 @@ function FooterComponent() {
   ];
 
   return (
-    <WidthContainer>
+    <div className="container">
       <div className="my-10 flex grid-cols-5 flex-col justify-between gap-8 md:grid md:gap-0">
         <div className="flex flex-col gap-2">
           <p className="text-3xl font-semibold">Mlab</p>
@@ -79,8 +78,7 @@ function FooterComponent() {
                     <li key={nav.name}>
                       <Link
                         className="opacity-80 transition duration-150 hover:opacity-100"
-                        href={nav.link}
-                      >
+                        href={nav.link}>
                         {nav.name}
                       </Link>
                     </li>
@@ -99,8 +97,7 @@ function FooterComponent() {
                     <li key={nav.name}>
                       <Link
                         className="opacity-80 transition duration-150 hover:opacity-100"
-                        href={nav.link}
-                      >
+                        href={nav.link}>
                         {nav.name}
                       </Link>
                     </li>
@@ -115,7 +112,7 @@ function FooterComponent() {
         <span className="text-xl ">&#169;</span>2024 Desing from online and
         developed By Robin
       </p>
-    </WidthContainer>
+    </div>
   );
 }
 

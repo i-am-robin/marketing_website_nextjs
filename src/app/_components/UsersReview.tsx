@@ -2,7 +2,6 @@ import React from "react";
 import SingleReview from "./SingleReview";
 import { UserReview } from "@/type/typs";
 import { contentMarketing, review1, review2 } from "@/lib/constance";
-import WidthContainer from "@/Components/WidthContainer";
 
 function UsersReview() {
   const reviews: UserReview[] = [
@@ -29,12 +28,12 @@ function UsersReview() {
   ];
 
   return (
-    <div>
-      <WidthContainer className="flex h-full flex-col gap-5 overflow-hidden md:flex-row md:gap-0">
+    <div className="container">
+      <div className="flex h-full flex-col gap-5 overflow-hidden md:flex-row md:gap-0">
         {reviews.map((review) => {
           return <SingleReview key={review.author.name} reviewData={review} />;
         })}
-      </WidthContainer>
+      </div>
     </div>
   );
 }

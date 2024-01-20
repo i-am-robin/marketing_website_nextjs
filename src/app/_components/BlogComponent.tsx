@@ -1,4 +1,3 @@
-import WidthContainer from "@/Components/WidthContainer";
 import React from "react";
 import SingleBlogPreview from "./SingleBlogPreview";
 import { blog1, blog2, contentMarketing } from "@/lib/constance";
@@ -32,8 +31,8 @@ function BlogComponent() {
   ];
 
   return (
-    <div>
-      <WidthContainer className="flex flex-col gap-2">
+    <div className="container">
+      <div className="flex flex-col gap-2">
         <div className="flex items-center justify-between">
           <h2>Blog</h2>
           <p className="max-w-[50%] text-sm  md:max-w-[30%] md:text-base">
@@ -46,7 +45,7 @@ function BlogComponent() {
           ))}
         </div>
         <Button className="mx-auto my-3">Load More</Button>
-      </WidthContainer>
+      </div>
     </div>
   );
 }

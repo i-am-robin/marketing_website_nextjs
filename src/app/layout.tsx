@@ -3,7 +3,6 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import IconContextProvider from "./context/IconContext";
 import HeaderComponent from "./Header";
-import WidthContainer from "@/Components/WidthContainer";
 import FooterComponent from "./_components/Footer";
 
 const inter = Poppins({
@@ -28,9 +27,9 @@ export default function RootLayout({
           <IconContextProvider>
             <HeaderComponent />
             {children}
-            <WidthContainer>
+            <div className="container">
               <div className="my-10 h-[2px] w-full bg-black p-0 opacity-50"></div>
-            </WidthContainer>
+            </div>
             <FooterComponent />
           </IconContextProvider>
         </div>

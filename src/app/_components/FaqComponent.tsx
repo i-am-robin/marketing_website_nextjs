@@ -1,6 +1,5 @@
 "use client";
 import Button from "@/Components/Ui/Button";
-import WidthContainer from "@/Components/WidthContainer";
 import React, { useState } from "react";
 import FaqQuestion from "./FaqQuestion";
 
@@ -34,8 +33,8 @@ function FaqComponent() {
     },
   ];
   return (
-    <div>
-      <WidthContainer className="flex grid-cols-3 flex-col gap-7 md:grid md:gap-14">
+    <div className="container">
+      <div className="flex grid-cols-3 flex-col gap-7 md:grid md:gap-14">
         <div className="flex flex-col gap-8 px-3">
           <h2>FAQ</h2>
           <p className="max-w-[90%] md:max-w-full">
@@ -54,7 +53,7 @@ function FaqComponent() {
             />
           ))}
         </div>
-      </WidthContainer>
+      </div>
     </div>
   );
 }

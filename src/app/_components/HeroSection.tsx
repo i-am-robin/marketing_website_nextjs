@@ -1,4 +1,3 @@
-import WidthContainer from "@/Components/WidthContainer";
 import { backgroundEffact, heroBg } from "@/lib/constance";
 import Image from "next/image";
 import React from "react";
@@ -7,7 +6,7 @@ import { FaArrowDown } from "react-icons/fa6";
 function HeroSection() {
   return (
     <div className="relative max-w-[100vw] overflow-hidden">
-      <WidthContainer className="">
+      <div className="container">
         <div className="flex flex-col items-center py-7 text-center">
           <h1 className="text-[4rem] leading-[1] md:text-[5rem] ">
             The loud voice <br className="hidden md:flex" /> of your brand
@@ -25,7 +24,7 @@ function HeroSection() {
             </div>
           </div>
         </div>
-      </WidthContainer>
+      </div>
       <Image
         className="absolute left-0 top-0 -z-10 h-screen w-screen"
         src={backgroundEffact}
